@@ -6,8 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
 @Slf4j
+@Service
 public class UserService {
 
     @Autowired
@@ -20,7 +20,7 @@ public class UserService {
 
         final String email = userEntity.getEmail();
 
-        if(userRepository.existByEmail(email)){
+        if(userRepository.existsByEmail(email)){
             log.warn("Email already exists{}" , email);
             throw new RuntimeException("Email already exists");
         }
